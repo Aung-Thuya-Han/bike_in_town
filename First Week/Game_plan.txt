@@ -1,0 +1,85 @@
+Airport Game
+Game
+	⁃	Goal is to find the diamond and return to the starting airport
+	⁃	Choose your own airport ( it would enhance user’s feeling to this game)
+	⁃	Total 30 airports, one in each country
+	⁃	Some money in the beginning
+	⁃	Some fuel in the beginning
+	⁃	Fuel consumption something like 1 euro = 2km
+	⁃	Some airports have loot boxes that have prizes or a bandit or the diamond
+	⁃	Give hints when player is near the diamond location (within 1000 Km)
+	⁃	after user got diamond, his starting airport name is printed out (so he knows where to return)
+
+Prizes
+	⁃	Topaz: 300 euro, in 4 random locations
+	⁃	Emerald: 600 euros, in 3 random locations
+	⁃	Ruby: 1000 euros, in 2 random locations
+	⁃	When diamond is found, a little bonus is added like 100 euro or 200km to return home (user can choose whichever it likes)
+
+Bandit
+	⁃	Steals half the money, in 3 random locations (Not all the money or user would be disappointed)
+
+
+
+
+
+
+
+Bike in Town
+Game Logic
+	⁃	User always starts from HOME
+	⁃	User needs money to buy energy drinks so he can get energy which is used to ride the bike from one place to another
+	⁃	1 dollar = 1 drink( fix me here, I am not sure what conversion it should be)
+	⁃	User will be provided some money and some energies
+	⁃	User needs to find the key he lost across the map
+	⁃	If he can find the key get back to home, he wins
+	⁃	If he can find the key but not enough energy to get home, he loses
+	⁃	If he can’t find the key as there is not enough energy, he loses
+
+Events
+	⁃	There will be 4 ten dollars notes across the map
+	⁃	There will be 3 twenty dollars notes across the map
+	⁃	There will be 2 twenty energies contained drinks across the map
+	⁃	There will be 2 bullies who takes half of the user money across the map
+	⁃	And there is only one hidden key across the map
+	⁃	(flat tire costs money)
+	⁃	(car crash costs energy)
+
+
+
+Randomize loot/prizes locations
+Randomize location_id, event_id, game_id from the beginning of the game
+
+
+
+
+Database
+
+1st Table - locations
+ - id 	int auto increment primary key
+ - name varchar
+- x point int
+- y point int
+
+2nd Table - game
+- id
+- screen_name
+- money
+- energy
+- current_loc
+- key_found BOOLEan
+
+3rd table - events
+- id
+- name
+- money
+- energy
+- level
+
+4th table - Events Location
+- location_id
+- event_id
+- game_id
+- visited BOOLEAN
+
+(We decided to create Bike In Town Game)
